@@ -3,7 +3,9 @@ package fr.alainmuller.recyclerviewsample;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
         // let the magic operate ;)
         recyclerView.setAdapter(adapter);
+
+        // Add Snapping for recyclerView
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
     }
 
     private void setupData() {
